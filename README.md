@@ -33,8 +33,11 @@ All images add the following features:
 
 The core of how gosu works is stolen directly from how Docker/libcontainer itself starts an application inside a container (and in fact, is using the /etc/passwd processing code directly from libcontainer's codebase).  
 
+---
+### Maintenance
+---
 Imags Instructions
 - The blueapple/alpine_glibc_basicimage/java_base is base alpine.
 - The blueapple/alpine_glibc_basicimage/java_auto_heap's shell base [fabric8/java-jboss-openjdk8-jdk](https://hub.docker.com/r/fabric8/java-jboss-openjdk8-jdk/)
-[1]: http://supervisord.org/index.html
-[2]: https://github.com/Supervisor/supervisor
+- [1]: http://supervisord.org/index.html
+- [2]: https://github.com/Supervisor/supervisor
