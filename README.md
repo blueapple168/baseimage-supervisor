@@ -29,10 +29,12 @@ All images add the following features:
   dumb-init enables you to simply prefix your command with dumb-init. It acts as PID 1 and immediately spawns your command as a child     process, taking care to properly handle and forward signals as they are received.
 * [gosu](https://github.com/tianon/gosu) is a simple tool grown out of the simple fact that su and sudo have very strange and often       annoying TTY and signal-forwarding behavior. They're also somewhat complex to setup and use (especially in the case of sudo), which     allows for a great deal of expressivity, but falls flat if all you need is "run this specific application as this specific user and     get out of the pipeline".
 
-* [Supervisor][133]([Github][134]) init system overlayed on it.
+* [Supervisor][1]([Github][2]) init system overlayed on it.
 
 The core of how gosu works is stolen directly from how Docker/libcontainer itself starts an application inside a container (and in fact, is using the /etc/passwd processing code directly from libcontainer's codebase).  
 
 Imags Instructions
 - The blueapple/alpine_glibc_basicimage/java_base is base alpine.
 - The blueapple/alpine_glibc_basicimage/java_auto_heap's shell base [fabric8/java-jboss-openjdk8-jdk](https://hub.docker.com/r/fabric8/java-jboss-openjdk8-jdk/)
+[1]: http://supervisord.org/index.html
+[2]: https://github.com/Supervisor/supervisor
