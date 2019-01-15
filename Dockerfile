@@ -2,12 +2,13 @@ FROM blueapple/baseimage:base
 MAINTAINER blueapple <blueapple1120@qq.com>
 
 # Install supervisor filebeat
+WORKDIR /deployments
 RUN set -x && \
     apk add --no-cache --purge -uU supervisor inotify-tools && \
     rm -rf /var/cache/apk/* /tmp/* && \
     curl -fsSL https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.5.4-linux-x86_64.tar.gz -o filebeat-6.5.4-linux-x86_64.tar.gz && \
-    tar -xf ./filebeat-6.5.4-linux-x86_64.tar.gz && \
-    mv ./filebeat-6.5.4-linux-x86_64 /opt/filebeat-6.5.4 && \
+    tar -xf ./filebeat-6.5.4-linux-x86_64.tar.gz -c /opt/ && \
+    mv /opt/filebeat-6.5.4-linux-x86_64 /opt/filebeat-6.5.4 && \
     rm -rf ./filebeat-6.5.4-linux-x86_64.tar.gz
 
 # SUPERVISOR
